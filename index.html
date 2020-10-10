@@ -5,9 +5,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
      <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/nano.min.css'>
+         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
        <link rel="stylesheet" media="screen" href="https://static.codepen.io/assets/fullpage/fullpage-4de243a40619a967c0bf13b95e1ac6f8de89d943b7fc8710de33f681fe287604.css" />
     <style type="text/css">
-    	@import url("https://fonts.googleapis.com/css?famil");
+      @import url("https://fonts.googleapis.com/css?famil");
 
 * {
   margin: 0px;
@@ -124,6 +125,33 @@ body {
   animation-delay: 0s;
   animation-duration: 11s;
 }
+.kontrol{
+        margin: 20px;
+        background: #fff;
+        padding: 20px;
+        position: absolute;
+        width: 200px;
+        border-radius: 10px;
+        left: -220px;
+        transition: all 1 ease;
+        z-index: 99;
+      }
+      .panah{
+        content: '';
+        width: 10px;
+        height: 10px;
+        position: absolute;
+        top: calc(50% - 5px);
+        right: -30px;
+        border: 2px solid rgba(255,255,255,0.2);
+        border-bottom: none;
+        border-left: none;
+        border-radius: 2px;
+        border-top-left-radius: 3px;
+        border-bottom-right-radius: 3px;
+        transform: rotate(45deg);
+        z-index: 50;
+      }
 @keyframes animate {
   0% {
     transform: translateY(0) rotate(0deg);
@@ -204,7 +232,9 @@ body {
 }
  </style>
    <body onload="init()">
-             <div class="custom-control custom-radio">
+    <div class="kontrol" onload="readStorage()">
+      <div class="panah"></div>
+      <div class="custom-control custom-radio">
           <input type="radio" class="custom-control-input" id="customRadio0" name="example1" checked>
           <label class="custom-control-label" for="customRadio0">Time Based</label>
         </div>   
@@ -299,7 +329,7 @@ body {
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
   
     <script type="text/javascript">
-    	$(function () {
+      $(function () {
   init();
   $(".area, .text-wrapper").on("contextmenu", (e) => {
     showColorPicker(e.clientX, e.clientY);
