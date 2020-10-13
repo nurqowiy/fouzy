@@ -16,17 +16,21 @@
 body {
   font-family: "Tangerine", serif;
 }
-         .kontrol{
-        margin: 20px;
-        background: #fff;
-        padding: 20px;
-        position: absolute;
-        width: 200px;
-        border-radius: 10px;
-        left: -220px;
-        transition: all 1 ease;
-        z-index: 99;
-      }
+        .main-menu {
+background:#000000;
+border-right:1px solid #e5e5e5;
+position:absolute;
+top:0;
+bottom:0;
+height:100%;
+left:0;
+width:60px;
+overflow:hidden;
+-webkit-transition:width .05s linear;
+transition:width .05s linear;
+-webkit-transform:translateZ(0) scale(1,1);
+z-index:1000;
+}
       .panah{
         content: '';
         width: 10px;
@@ -275,9 +279,7 @@ body {
     <li></li>
   </ul>
 </div>
-    <body onload="init()">
-       <div class="kontrol" onload="readStorage()">
-      <div class="panah"></div>
+<body><div class="panah"></div><nav class="main-menu">
            </audio>
        <audio controls>
            <source src="Lara.mp3" type="audio/mpeg">
