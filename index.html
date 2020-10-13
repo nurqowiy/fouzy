@@ -16,27 +16,50 @@
 body {
   font-family: "Tangerine", serif;
 }
-.main-menu {
-background:#000000;
-border-right:1px solid #e5e5e5;
-position:absolute;
-top:0;
-bottom:0;
-height:100%;
-left:0;
-width:60px;
-overflow:hidden;
--webkit-transition:width .05s linear;
-transition:width .05s linear;
--webkit-transform:translateZ(0) scale(1,1);
-z-index:1000;
+         .kontrol{
+        margin: 20px;
+        background: #fff;
+        padding: 20px;
+        position: absolute;
+        width: 200px;
+        border-radius: 10px;
+        left: -220px;
+        transition: all 1 ease;
+        z-index: 99;
+      }
+      .panah{
+        content: '';
+        width: 10px;
+        height: 10px;
+        position: absolute;
+        top: calc(50% - 5px);
+        right: -30px;
+        border: 2px solid rgba(255,255,255,0.2);
+        border-bottom: none;
+        border-left: none;
+        border-radius: 2px;
+        border-top-left-radius: 3px;
+        border-bottom-right-radius: 3px;
+        transform: rotate(45deg);
+        z-index: 50;
+      }
+.context {
+  width: 100%;
+  position: absolute;
+  top: 25vh;
+  z-index: 999;
 }
-.are {
-float: left;
-background: #e2e2e2;
-width: 100%;
-height: 100%;
+.context h1 {
+  text-align: center;
+  color: #000;
+  font-size: 4em;
+  transition: all 1s ease;
+  cursor: default;
 }
+.context h1::selection {
+  background: transparent;
+}
+
 .area {
   background: #fff;
   background: -webkit-linear-gradient(to left, #8f94fb, #4e54c8);
@@ -208,6 +231,15 @@ height: 100%;
 }
  </style>
    <body onload="init()">
+       <div class="kontrol" onload="readStorage()">
+      <div class="panah"></div>
+           </audio>
+       <audio controls>
+           <source src="Lara.mp3" type="audio/mpeg">
+       </audio>
+              <audio controls>
+           <source src="Sorai.mp3" type="audio/mpeg">
+       </audio>
 <div class="area">
   <ul class="circles">
     <li></li>
@@ -253,14 +285,6 @@ height: 100%;
     <li></li>
   </ul>
 </div>
-     <div class="are"></div><nav class="main-menu">
- </audio>
-       <audio controls>
-           <source src="Lara.mp3" type="audio/mpeg">
-       </audio>
-              <audio controls>
-           <source src="Sorai.mp3" type="audio/mpeg">
-       </audio>
     <script src=&quot;https://static.codepen.io/assets/common/stopExecutionOnTimeout-157cd5b220a5c80d4ff8e0e70ac069bffd87a61252088146915e8726e5d9f147.js&quot;></script>
   <script src='https://cdn.jsdelivr.net/npm/typed.js@2.0.11'></script>
 <script src='https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr.min.js'></script>
@@ -372,4 +396,3 @@ function redirectToGoogle(q) {
     </script>
   </body>
 </html>
-
